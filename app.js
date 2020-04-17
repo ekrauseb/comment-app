@@ -26,13 +26,14 @@ app.use('/post', postsRoute);
  });
 
 
-
+ 
  //Connect to db
  mongoose.connect(
 process.env.DB_CONNECTION,
     { useNewUrlParser: true }, 
  () => console.log("conected to db")
  );
+
 
  //start listening the server
  app.listen(process.env.PORT || 3000);

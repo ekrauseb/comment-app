@@ -40,10 +40,10 @@ router.patch('/:postId', async (req,res) => {
    try{
      const updatedPost = await Post.updateOne(
       {_id: req.params.postId}, 
-      { $set: { title: req.body.title, 
-        link: req.body.link, 
-        description: req.body.description, 
-        image: req.body.image } },
+      { $set: { name: req.body.name, 
+        mail: req.body.mail, 
+        comment: req.body.comment, 
+        respuesta: req.body.respuesta } },
 
       );
      res.json(updatedPost);
@@ -57,10 +57,10 @@ router.patch('/:postId', async (req,res) => {
 router.post('/', async (req,res) => {
  //   console.log(req.body);
  const post = new Post({
-    title: req.body.title,
-    link: req.body.link,
-    description: req.body.description,
-    image: req.body.image
+    name: req.body.name,
+    mail: req.body.mail,
+    comment: req.body.comment,
+    respuesta: req.body.respuesta
  });
 
 try{

@@ -2,22 +2,22 @@ const mongoose = require('mongoose');
 
 
 const PostSchema = mongoose.Schema({
-    title: {
+    name: {
         type: String,
         required: true
     },
-    link: {
+    mail: {
+        type: String,
+        required: false
+        },
+    comment: {
         type: String,
         required: true
-        },
-    description: {
-        type: String,
-        required: false
-        },
-    image: {
-        type: String,
-        required: false
-        },        
+        },    
+    respuesta: {
+            type: String,
+            required: false
+            },
 });
 
-module.exports = mongoose.model('links', PostSchema);
+module.exports = mongoose.model('comments', PostSchema);
